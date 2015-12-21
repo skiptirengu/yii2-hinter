@@ -1,0 +1,23 @@
+{
+  "name": "nevermnd/hinter",
+  "description": "Bootstrap alert hint widget for Yii2",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Thiago Oliveira",
+      "email": "thiago.oliveira.gt14@gmail.com"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "~2.0.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "nevermnd\\hinter\\": "src/"
+    }
+  }
+}
