@@ -2,6 +2,8 @@
 
 Yii2 hinter widget
 
+Automatically shows a nice hint with messages flashed into session on page load.
+
 ## Installation
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
