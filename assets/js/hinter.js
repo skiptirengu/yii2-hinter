@@ -22,7 +22,7 @@
             if (!config.message) return;
 
             var options = $.extend(true, defaults, config || {});
-            var css = options.success ? 'alert-success' : 'alert-danger';
+            var css = options.isSuccess ? 'alert-success' : 'alert-danger';
             var html = '<div class="' + css + ' alert affix hinter" id="hinter">' +
                 '<button type="button" class="close" data-dismiss="alert">' +
                 '<span>&times;</span></button>' + options.message + '</div>';
