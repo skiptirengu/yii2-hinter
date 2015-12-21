@@ -13,8 +13,8 @@
     var defaults = {
         message: "",
         isSuccess: "",
-        slideUp: 200,
-        delay: 3000
+        slideUp: 300,
+        delay: 5000
     };
 
     var methods = {
