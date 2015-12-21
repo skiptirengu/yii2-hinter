@@ -5,6 +5,7 @@ namespace nevermnd\hinter;
 use yii\base\InvalidConfigException;
 use yii\base\Widget;
 use yii\helpers\Json;
+use yii\helpers\ArrayHelper as Arr;
 
 /**
  * Class Hinter
@@ -48,10 +49,11 @@ class Hinter extends Widget
         $view = $this->getView();
         HinterAsset::register($view);
 
+        $id        = $this->getId();
         $isSuccess = \Yii::$app->session->hasFlash($this->successMessageParam);
         $message   = \Yii::$app->session->get($isSuccess ? $this->successMessageParam : $this->errorMessageParam);
 
-        $this->clientOptions = array_merge($this->clientOptions, compact('isSuccess', 'message'));
+        $this->clientOptions = Arr::merge($this->clientOptions, compact('isSuccess', 'message', 'id'));
 
         $view->registerJs("$('$this->containerSelector').hinter(" . Json::encode($this->clientOptions) . ");");
     }
