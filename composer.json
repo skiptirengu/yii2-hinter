@@ -1,5 +1,5 @@
 {
-  "name": "nevermnd/hinter",
+  "name": "nevermnd/yii2-hinter",
   "description": "Bootstrap alert hint widget for Yii2",
   "minimum-stability": "stable",
   "license": "MIT",
