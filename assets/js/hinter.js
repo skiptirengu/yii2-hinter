@@ -1,37 +1,48 @@
 (function ($) {
 
-    $.fn.hinter = function (method) {
-        if (methods[method]) {
-            return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
-        } else if (typeof method === 'object' || !method) {
-            return methods.init.apply(this, arguments);
-        } else {
-            $.error("Call to undefined method " + method);
-        }
-    };
-
+    // Default plugin configuration
     var defaults = {
+
+        // The message to be shown
         message: "",
+
+        // Whether this is a success message
         isSuccess: "",
-        slideUp: 300,
-        delay: 5000
+
+        // Default slideUp animation time
+        slideUp: 250,
+
+        // Time (ms) before the hint is removed
+        delay: 5000,
+
+        // Id for the hinter container
+        id: "hinter",
+
+        // The class to be added to the hint container
+        class: "hinter"
     };
 
-    var methods = {
-        init: function (config) {
-            if (!config.message) return;
+    $.fn.hinter = function (config) {
 
-            var options = $.extend(true, defaults, config || {});
-            var css = options.isSuccess ? 'alert-success' : 'alert-danger';
-            var html = '<div class="' + css + ' alert affix hinter" id="hinter">' +
-                '<button type="button" class="close" data-dismiss="alert">' +
-                '<span>&times;</span></button>' + options.message + '</div>';
+        if (!config.message) return this;
 
-            $(this).prepend(html);
-            $("#hinter").delay(options.delay).slideUp(options.slideUp, function () {
-                $(this).remove();
-            });
-        }
+        var options = $.extend({}, defaults, config || {});
+
+        $(this).prepend(
+            $('<div></div>')
+                .addClass(options.isSuccess ? 'alert-success' : 'alert-danger')
+                .addClass(options.class)
+                .addClass('alert affix')
+                .attr('id', options.id)
+                .text(options.message)
+                .prepend('<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>')
+        );
+
+        $("#" + options.id).delay(options.delay).slideUp(options.slideUp, function () {
+            $(this).remove();
+        });
+
+        return this;
     };
 
 })(jQuery);
