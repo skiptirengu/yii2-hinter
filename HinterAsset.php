@@ -11,7 +11,7 @@ use yii\web\AssetBundle;
  */
 class HinterAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/nevermnd/hinter/assets';
+    public $sourcePath = '@vendor/nevermnd/yii2-hinter/assets';
     public $css = [
         'css/hinter.css'
     ];
