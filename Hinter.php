@@ -2,6 +2,7 @@
 
 namespace nevermnd\hinter;
 
+use yii\base\InvalidConfigException;
 use yii\base\Widget;
 use yii\helpers\Json;
 
@@ -28,6 +29,16 @@ class Hinter extends Widget
      * @var string The selector in wich the messages will be appended.
      */
     public $containerSelector = '';
+
+    /**
+     * @inheritdoc
+     */
+    public function init()
+    {
+        if (!$this->containerSelector) {
+            throw new InvalidConfigException('containerSelector must be informed');
+        }
+    }
 
     /**
      * @inheritdoc
