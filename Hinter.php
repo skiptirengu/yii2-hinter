@@ -53,6 +53,6 @@ class Hinter extends Widget
 
         $this->clientOptions = array_merge($this->clientOptions, compact('isSuccess', 'message'));
 
-        $view->registerJs("$($this->containerSelector).hinter(" . Json::encode($this->clientOptions) . ");");
+        $view->registerJs("$('$this->containerSelector').hinter(" . Json::encode($this->clientOptions) . ");");
     }
 }
