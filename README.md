@@ -18,7 +18,7 @@ $ composer require nevermnd/yii2-hinter:^1.1
 or add
 
 ```
-"nevermnd/yii2-hinter": "~1.1"
+"nevermnd/yii2-hinter": "^1.1"
 ```
 
 to the `require` section of your `composer.json` file.
