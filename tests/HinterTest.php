@@ -9,6 +9,7 @@ namespace nevermnd\hinter\tests;
  */
 class HinterTest extends \PHPUnit_Framework_TestCase
 {
+
     public function testWidget()
     {
         \Yii::setAlias('@bower', __DIR__ . '/../vendor/bower-asset');
