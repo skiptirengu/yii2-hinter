@@ -12,13 +12,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```bash
-$ composer require nevermnd/yii2-hinter:~1.0
+$ composer require nevermnd/yii2-hinter:^1.1
 ```
 
 or add
 
 ```
-"nevermnd/yii2-hinter": "~1.0"
+"nevermnd/yii2-hinter": "~1.1"
 ```
 
 to the `require` section of your `composer.json` file.
