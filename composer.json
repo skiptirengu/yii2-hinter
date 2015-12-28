@@ -21,9 +21,17 @@
     "yiisoft/yii2": "~2.0.4",
     "yiisoft/yii2-bootstrap": "~2.0.0"
   },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0.0"
+  },
   "autoload": {
     "psr-4": {
-      "nevermnd\\hinter\\": "/"
+      "nevermnd\\hinter\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "nevermnd\\hinter\\tests\\": "tests/"
     }
   }
 }

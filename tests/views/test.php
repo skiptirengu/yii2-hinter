@@ -1,0 +1,1 @@
+<?= \nevermnd\hinter\Hinter::widget();

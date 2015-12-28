@@ -7,7 +7,7 @@
         message: "",
 
         // Whether this is a success message
-        isSuccess: "",
+        isSuccess: true,
 
         // Default slideUp animation time
         slideUp: 250,

@@ -11,7 +11,6 @@ use yii\web\AssetBundle;
  */
 class HinterAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/nevermnd/yii2-hinter/assets';
     public $css = [
         'css/hinter.css'
     ];
@@ -22,4 +21,12 @@ class HinterAsset extends AssetBundle
         'yii\bootstrap\BootstrapAsset',
         'yii\bootstrap\BootstrapPluginAsset'
     ];
+
+    /**
+     * @inheritdoc
+     */
+    public function init()
+    {
+        $this->sourcePath = __DIR__ . '/assets';
+    }
 }

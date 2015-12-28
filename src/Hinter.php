@@ -4,8 +4,8 @@ namespace nevermnd\hinter;
 
 use yii\base\InvalidConfigException;
 use yii\base\Widget;
-use yii\helpers\Json;
 use yii\helpers\ArrayHelper as Arr;
+use yii\helpers\Json;
 
 /**
  * Class Hinter
@@ -15,11 +15,11 @@ use yii\helpers\ArrayHelper as Arr;
 class Hinter extends Widget
 {
     /**
-     * @var string The key name of the success messages in the flash session.
+     * @var string The key name of the success messages in the flashed into session.
      */
     public $successMessageParam = 'success';
     /**
-     * @var string The key name of the error messages in the flash session.
+     * @var string The key name of the error messages in the flashed into session.
      */
     public $errorMessageParam = 'error';
     /**
@@ -29,7 +29,7 @@ class Hinter extends Widget
     /**
      * @var string The selector in wich the messages will be appended.
      */
-    public $containerSelector = '';
+    public $containerSelector = 'body';
 
     /**
      * @inheritdoc
@@ -37,7 +37,7 @@ class Hinter extends Widget
     public function init()
     {
         if (!$this->containerSelector) {
-            throw new InvalidConfigException('containerSelector must be informed');
+            throw new InvalidConfigException('containerSelector must be set');
         }
     }
 
@@ -49,9 +49,9 @@ class Hinter extends Widget
         $view = $this->getView();
         HinterAsset::register($view);
 
-        $id        = $this->getId();
+        $id = $this->getId();
         $isSuccess = \Yii::$app->session->hasFlash($this->successMessageParam);
-        $message   = \Yii::$app->session->get($isSuccess ? $this->successMessageParam : $this->errorMessageParam);
+        $message = \Yii::$app->session->get($isSuccess ? $this->successMessageParam : $this->errorMessageParam);
 
         $this->clientOptions = Arr::merge($this->clientOptions, compact('isSuccess', 'message', 'id'));
 
