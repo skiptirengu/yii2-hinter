@@ -49,7 +49,7 @@ class Hinter extends Widget
         $view = $this->getView();
         HinterAsset::register($view);
 
-        $id = $this->getId();
+        $id = isset($this->clientOptions['id']) ? $this->clientOptions['id'] : $this->getId();
         $isSuccess = \Yii::$app->session->hasFlash($this->successMessageParam);
         $message = \Yii::$app->session->get($isSuccess ? $this->successMessageParam : $this->errorMessageParam);
 
