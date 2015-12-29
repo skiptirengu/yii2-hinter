@@ -27,6 +27,7 @@ class HinterAsset extends AssetBundle
      */
     public function init()
     {
+        parent::init();
         $this->sourcePath = __DIR__ . '/assets';
     }
 }
