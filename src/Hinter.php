@@ -51,7 +51,7 @@ class Hinter extends Widget
 
         $id = isset($this->clientOptions['id']) ? $this->clientOptions['id'] : $this->getId();
         $isSuccess = \Yii::$app->session->hasFlash($this->successMessageParam);
-        $message = \Yii::$app->session->get($isSuccess ? $this->successMessageParam : $this->errorMessageParam);
+        $message = \Yii::$app->session->getFlash($isSuccess ? $this->successMessageParam : $this->errorMessageParam);
 
         $this->clientOptions = Arr::merge($this->clientOptions, compact('isSuccess', 'message', 'id'));
 
