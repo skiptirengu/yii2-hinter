@@ -15,11 +15,11 @@ use yii\helpers\Json;
 class Hinter extends Widget
 {
     /**
-     * @var string The key name of the success messages in the flashed into session.
+     * @var string The key name of the success messages flashed into session.
      */
     public $successMessageParam = 'success';
     /**
-     * @var string The key name of the error messages in the flashed into session.
+     * @var string The key name of the error messages flashed into session.
      */
     public $errorMessageParam = 'error';
     /**
@@ -27,7 +27,7 @@ class Hinter extends Widget
      */
     public $clientOptions = [];
     /**
-     * @var string The selector in wich the messages will be appended.
+     * @var string The selector in which the messages will be appended.
      */
     public $containerSelector = 'body';
 
