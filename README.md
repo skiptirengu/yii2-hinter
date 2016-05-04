@@ -32,5 +32,6 @@ to the `require` section of your `composer.json` file.
   'successMessageParam' => 'success',
   'containerSelector'   => '#main-div'
 ]); ?>
+```
 
 For complete documentation, visit the [hinter.js](https://github.com/nevermnd/hinter.js) page.
