@@ -11,23 +11,10 @@ use yii\web\AssetBundle;
  */
 class HinterAsset extends AssetBundle
 {
-    public $css = [
-        'css/hinter.css'
-    ];
-    public $js = [
-        'js/hinter.js'
-    ];
+    public $sourcePath = '@bower/hinter.js';
+    public $js = ['dist/hinter.min.js'];
     public $depends = [
         'yii\bootstrap\BootstrapAsset',
         'yii\bootstrap\BootstrapPluginAsset'
     ];
-
-    /**
-     * @inheritdoc
-     */
-    public function init()
-    {
-        parent::init();
-        $this->sourcePath = __DIR__ . '/assets';
-    }
 }

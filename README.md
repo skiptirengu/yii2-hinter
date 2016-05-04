@@ -2,11 +2,12 @@
 
 [![Build Status](https://travis-ci.org/nevermnd/yii2-hinter.svg?branch=master)](https://travis-ci.org/nevermnd/yii2-hinter)
 
-Yii2 hinter widget
+Yii2 [hinter.js](https://github.com/nevermnd/hinter.js) widget.
 
 Automatically shows a nice hint with messages flashed into session on page load.
 
 ## Installation
+
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
 Either run
@@ -25,9 +26,11 @@ to the `require` section of your `composer.json` file.
 
 ## Usage
 
-```
+```php
 <?= Hinter::widget([
-  'errorMessageParam' => 'error',
+  'errorMessageParam'   => 'error',
   'successMessageParam' => 'success',
-  'containerSelector' => '#main-div'
+  'containerSelector'   => '#main-div'
 ]); ?>
+
+For complete documentation, visit the [hinter.js](https://github.com/nevermnd/hinter.js) page.

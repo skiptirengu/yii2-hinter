@@ -2,12 +2,14 @@
 
 namespace nevermnd\hinter\tests;
 
+use yii\web\AssetManager as BaseAsset;
+
 /**
  * Class AssetManager
  *
  * @author Thiago Oliveira <thiago.oliveira.gt14@gmail.com>
  */
-class AssetManager extends \yii\web\AssetManager
+class AssetManager extends BaseAsset
 {
     protected $_hashes = [];
     

@@ -2,9 +2,11 @@
 
 namespace nevermnd\hinter;
 
+use Yii;
 use yii\base\InvalidConfigException;
 use yii\base\Widget;
 use yii\helpers\ArrayHelper as Arr;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
 
 /**
@@ -49,12 +51,15 @@ class Hinter extends Widget
         $view = $this->getView();
         HinterAsset::register($view);
 
-        $id = isset($this->clientOptions['id']) ? $this->clientOptions['id'] : $this->getId();
-        $isSuccess = \Yii::$app->session->hasFlash($this->successMessageParam);
-        $message = \Yii::$app->session->getFlash($isSuccess ? $this->successMessageParam : $this->errorMessageParam);
+        $id = ArrayHelper::getValue($this->clientOptions, 'id', $this->getId());
+        $this->setId($id);
 
-        $this->clientOptions = Arr::merge($this->clientOptions, compact('isSuccess', 'message', 'id'));
+        $success = Yii::$app->getSession()->hasFlash($this->successMessageParam);
+        $message = Yii::$app->getSession()->getFlash($success ? $this->successMessageParam : $this->errorMessageParam);
 
-        $view->registerJs("$('$this->containerSelector').hinter(" . Json::encode($this->clientOptions) . ");");
+        if (!empty($message)) {
+            $this->clientOptions = Arr::merge($this->clientOptions, compact('isSuccess', 'message', 'id'));
+            $view->registerJs("$('$this->containerSelector').hinter(" . Json::encode($this->clientOptions) . ");");
+        }
     }
 }

@@ -1,6 +1,6 @@
 {
   "name": "nevermnd/yii2-hinter",
-  "description": "Bootstrap alert hint widget for Yii2",
+  "description": "Bootstrap alert hinter.js widget for Yii2",
   "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
@@ -19,7 +19,8 @@
   },
   "require": {
     "yiisoft/yii2": "~2.0.4",
-    "yiisoft/yii2-bootstrap": "~2.0.0"
+    "yiisoft/yii2-bootstrap": "~2.0.0",
+    "bower-asset/hinter.js": "^1.0.0"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.0.0"
