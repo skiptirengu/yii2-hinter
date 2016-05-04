@@ -54,8 +54,8 @@ class Hinter extends Widget
         $id = ArrayHelper::getValue($this->clientOptions, 'id', $this->getId());
         $this->setId($id);
 
-        $success = Yii::$app->getSession()->hasFlash($this->successMessageParam);
-        $message = Yii::$app->getSession()->getFlash($success ? $this->successMessageParam : $this->errorMessageParam);
+        $isSuccess = Yii::$app->getSession()->hasFlash($this->successMessageParam);
+        $message = Yii::$app->getSession()->getFlash($isSuccess ? $this->successMessageParam : $this->errorMessageParam);
 
         if (!empty($message)) {
             $this->clientOptions = Arr::merge($this->clientOptions, compact('isSuccess', 'message', 'id'));
