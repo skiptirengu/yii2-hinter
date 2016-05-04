@@ -35,3 +35,7 @@ to the `require` section of your `composer.json` file.
 ```
 
 For complete documentation, visit the [hinter.js](https://github.com/nevermnd/hinter.js) page.
+
+## License
+
+Licensed under the incredibly [permissive](http://en.wikipedia.org/wiki/Permissive_free_software_licence) [MIT license](http://creativecommons.org/licenses/MIT/)
