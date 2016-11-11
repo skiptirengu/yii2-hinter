@@ -1,6 +1,6 @@
 # yii2-hinter
 
-[![Build Status](https://travis-ci.org/nevermnd/yii2-hinter.svg?branch=master)](https://travis-ci.org/nevermnd/yii2-hinter)
+[![Build Status](https://travis-ci.org/skiptirengu/yii2-hinter.svg?branch=master)](https://travis-ci.org/skiptirengu/yii2-hinter)
 
 Yii2 [hinter.js](https://github.com/nevermnd/hinter.js) widget.
 
